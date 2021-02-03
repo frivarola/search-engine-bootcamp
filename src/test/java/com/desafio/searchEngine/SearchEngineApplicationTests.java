@@ -1,4 +1,4 @@
-package com.desafio.searchEengine;
+package com.desafio.searchEngine;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
