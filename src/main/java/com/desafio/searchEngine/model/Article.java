@@ -1,6 +1,9 @@
-package com.desafio.searchEngine.dtos;
+package com.desafio.searchEngine.model;
 
-public class ArticleDTO {
+import com.desafio.searchEngine.dtos.ArticleDTO;
+
+public class Article {
+
 
     private String name;
     private String category;
@@ -9,33 +12,6 @@ public class ArticleDTO {
     private Integer quantity;
     private Boolean freeShip;
     private String prestige;
-
-    public ArticleDTO() {
-    }
-
-    public ArticleDTO(String name) {
-        this.name = name;
-    }
-
-    public ArticleDTO(String name, String category, String brand, Double price, Integer quantity, Boolean freeShip, String prestige) {
-        this.name = name;
-        this.category = category;
-        this.brand = brand;
-        this.price = price;
-        this.quantity = quantity;
-        this.freeShip = freeShip;
-        this.prestige = prestige;
-    }
-
-    public ArticleDTO(String category, Boolean freeShip) {
-        this.category = category;
-        this.freeShip = freeShip;
-    }
-
-    public ArticleDTO(String category, String brand) {
-        this.category = category;
-        this.brand = brand;
-    }
 
     public String getName() {
         return name;

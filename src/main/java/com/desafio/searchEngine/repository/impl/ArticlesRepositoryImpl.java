@@ -45,8 +45,11 @@ public class ArticlesRepositoryImpl implements ArticlesRepository {
     }
 
     @Override
-    public List<ArticleDTO> getArticleByFilters(String filter1, String filter2) {
-        return null;
+    public List<ArticleDTO> getArticleByFilters(ArticleDTO articleDTO) {
+        ArrayList<ArticleDTO> articles = database;
+        List<ArticleDTO> result = new ArrayList<>();
+
+        return result;
     }
 
     private static ArrayList<ArticleDTO> loadDatabase(){

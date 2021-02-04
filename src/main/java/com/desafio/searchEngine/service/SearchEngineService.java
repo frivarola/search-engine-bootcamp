@@ -8,5 +8,5 @@ public interface SearchEngineService {
 
     List<ArticleDTO> getAllArticlesAvailables();
     List<ArticleDTO> getAllArticlesByCategory(String category);
-    List<ArticleDTO> getAllArticlesByFilters(String[] filters);
+    List<ArticleDTO> getAllArticlesByFilters(ArticleDTO articleDTO);
 }

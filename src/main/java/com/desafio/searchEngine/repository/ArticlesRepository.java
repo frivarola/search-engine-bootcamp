@@ -8,5 +8,5 @@ public interface ArticlesRepository {
 
     List<ArticleDTO> getAllArticles();
     List<ArticleDTO> getArticleByCategory(String category);
-    List<ArticleDTO> getArticleByFilters(String filter1, String filter2);
+    List<ArticleDTO> getArticleByFilters(ArticleDTO articleDTO);
 }
