@@ -7,9 +7,11 @@ import com.desafio.searchEngine.utils.ComparatorArticles;
 import com.desafio.searchEngine.utils.OrderArticles;
 import com.desafio.searchEngine.utils.Sorter;
 
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -69,31 +71,39 @@ public class SearchEngineServiceImpl implements SearchEngineService {
 
     @Override
     public List<ArticleDTO> getAllArticlesByFilters(ArticleDTO articleDTO, Integer order) {
-        return orderBy(this.getAllArticlesByFilters(articleDTO), order);
+        if (order != null) {
+            return orderBy(this.getAllArticlesByFilters(articleDTO), order);
+        } else {
+            return this.getAllArticlesByFilters(articleDTO);
+        }
     }
 
     /**
      * Funcion que determina el ordenamiento a implementar.
-     * @param list - lista a ordenar
+     *
+     * @param list  - lista a ordenar
      * @param order - tipo de ordenaamiento definido en OrderArticles.enum
      * @return lista ordenada
      */
-    private List<ArticleDTO> orderBy(List<ArticleDTO> list, Integer order){
+    private List<ArticleDTO> orderBy(List<ArticleDTO> list, @Nullable Integer order) {
         List<ArticleDTO> articles = list;
-
-        if(order.equals(OrderArticles.ALPH_ASC)){
+        if (order.equals(OrderArticles.ALPH_ASC.ordinal())) {
             //orden alfabeticamente ascendente
-            return Sorter.bubbleSortAsc(articles, Comparator.comparing(ArticleDTO::getName));
+            Collections.sort(articles, (a,b) -> a.getName().compareTo(b.getName()));
+            return articles;
         }
-        if(order.equals(OrderArticles.ALPH_DESC)){
+        if (order.equals(OrderArticles.ALPH_DESC.ordinal())) {
             //orden alfabeticamente descendente
-            return Sorter.bubbleSortDesc(articles, Comparator.comparing(ArticleDTO::getName));
+            Collections.sort(articles, (a,b) -> b.getName().compareTo(a.getName()));
+            return articles;
         }
-        if(order.equals(OrderArticles.PRICE_HIGHER)){
-            return Sorter.bubbleSortDesc(articles, Comparator.comparing(ArticleDTO::getPrice));
+        if (order.equals(OrderArticles.PRICE_HIGHER.ordinal())) {
+            Collections.sort(articles, (a,b) -> b.getPrice().compareTo(a.getPrice()));
+            return articles;
         }
-        if(order.equals(OrderArticles.PRICE_LOWER)){
-            return Sorter.bubbleSortAsc(articles, Comparator.comparing(ArticleDTO::getPrice));
+        if (order.equals(OrderArticles.PRICE_LOWER.ordinal())) {
+            Collections.sort(articles, (a,b) -> a.getPrice().compareTo(b.getPrice()));
+            return articles;
         }
         //si el metodo de ordenamiento no existe, devuelve la lista original
         return articles;

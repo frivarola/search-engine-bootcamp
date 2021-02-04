@@ -3,7 +3,7 @@
     "name": "Short",
     "category": "Indumentaria",
     "brand": "Lacoste",
-    "price": 3.900,
+    "price": 3900,
     "quantity": 9,
     "freeShip": true,
     "prestige": "***"
@@ -21,7 +21,7 @@
     "name": "Chomba",
     "category": "Indumentaria",
     "brand": "Taverniti",
-    "price": 2.400,
+    "price": 2400,
     "quantity": 6,
     "freeShip": false,
     "prestige": "***"
@@ -30,7 +30,7 @@
     "name": "Remera",
     "category": "Indumentaria",
     "brand": "Taverniti",
-    "price": 2.300,
+    "price": 2300,
     "quantity": 2,
     "freeShip": false,
     "prestige": "***"
@@ -39,7 +39,7 @@
     "name": "Smartwatch",
     "category": "Celulares",
     "brand": "Noga",
-    "price": 1.900,
+    "price": 1900,
     "quantity": 20,
     "freeShip": false,
     "prestige": "**"
@@ -48,7 +48,7 @@
     "name": "Redmi Note 9",
     "category": "Celulares",
     "brand": "Xiamoi",
-    "price": 40.000,
+    "price": 40000,
     "quantity": 15,
     "freeShip": true,
     "prestige": "****"
@@ -57,7 +57,7 @@
     "name": "Camiseta",
     "category": "Deportes",
     "brand": "Topper",
-    "price": 2.300,
+    "price": 2300,
     "quantity": 2,
     "freeShip": false,
     "prestige": "***"
@@ -66,7 +66,7 @@
     "name": "Zapatillas Deportivas",
     "category": "Deportes",
     "brand": "Adidas",
-    "price": 13.650,
+    "price": 13650,
     "quantity": 6,
     "freeShip": true,
     "prestige": "*****"
@@ -75,7 +75,7 @@
     "name": "Zapatillas Deportivas",
     "category": "Deportes",
     "brand": "Nike",
-    "price": 14.000,
+    "price": 14000,
     "quantity": 4,
     "freeShip": true,
     "prestige": "*****"
@@ -84,7 +84,7 @@
     "name": "Soldadora",
     "category": "Herramientas",
     "brand": "Black & Decker",
-    "price": 7.215,
+    "price": 7215,
     "quantity": 10,
     "freeShip": true,
     "prestige": "***"
@@ -93,7 +93,7 @@
     "name": "Taladro",
     "category": "Herramientas",
     "brand": "Black & Decker",
-    "price": 12.500,
+    "price": 12500,
     "quantity": 7,
     "freeShip": true,
     "prestige": "****"
@@ -102,7 +102,7 @@
     "name": "Desmalezadora",
     "category": "Herramientas",
     "brand": "Makita",
-    "price": 9.600,
+    "price": 9600,
     "quantity": 5,
     "freeShip": true,
     "prestige": "****"

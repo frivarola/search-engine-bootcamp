@@ -18,12 +18,12 @@ public class SearchEngineController {
         this.searchEngineSrv = searchEngineSrv;
     }
 
-    @GetMapping()
-    public List<ArticleDTO> getAllArticlesAvailables() {
-        return this.searchEngineSrv.getAllArticlesAvailables();
-    }
+/*    @GetMapping()
+    public List<ArticleDTO> getAllArticlesAvailables(@RequestParam (required = false) Integer order) {
+        return this.searchEngineSrv.getAllArticlesAvailables(order);
+    }*/
 
-    @RequestMapping(params = "category")
+    @GetMapping(params = {"category"})
     public List<ArticleDTO> getAllArticlesByCategory(@RequestParam String category) {
         return this.searchEngineSrv.getAllArticlesByCategory(category);
     }
@@ -35,11 +35,12 @@ public class SearchEngineController {
                                                     @RequestParam (required = false) Double price,
                                                     @RequestParam (required = false) Integer quantity,
                                                     @RequestParam (required = false) Boolean freeShip,
-                                                    @RequestParam (required = false) String prestige) {
+                                                    @RequestParam (required = false) String prestige,
+                                                    @RequestParam (required = false) Integer order) {
         //En este momento se arma un "PSEUDO ARTICULO" con los valores que nos llegaron como parametros y se trata de buscar el Articulo que sea mas similar a este pseudoArticulo
         //La comparacion se hace con ComparatorArticle
         ArticleDTO articleDTO = new ArticleDTO(name, category, brand, price, quantity, freeShip, prestige);
-        return searchEngineSrv.getAllArticlesByFilters(articleDTO);
+        return searchEngineSrv.getAllArticlesByFilters(articleDTO, order);
     }
 
 }
