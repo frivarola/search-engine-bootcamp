@@ -21,12 +21,14 @@ public class SearchEngineController {
 /*    @GetMapping()
     public List<ArticleDTO> getAllArticlesAvailables(@RequestParam (required = false) Integer order) {
         return this.searchEngineSrv.getAllArticlesAvailables(order);
-    }*/
+    }
 
     @GetMapping(params = {"category"})
     public List<ArticleDTO> getAllArticlesByCategory(@RequestParam String category) {
         return this.searchEngineSrv.getAllArticlesByCategory(category);
     }
+
+ */
 
     @GetMapping()
     public List<ArticleDTO> getAllArticlesByFilters(@RequestParam (required = false) String name,
