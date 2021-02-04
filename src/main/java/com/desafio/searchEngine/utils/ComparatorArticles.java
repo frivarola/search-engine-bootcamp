@@ -12,6 +12,7 @@ public class ComparatorArticles implements Comparator<ArticleDTO> {
      * Devuelve -1 si no cumple con alguno de los campos a comparar
      */
     public int compare(ArticleDTO o1, ArticleDTO o2) {
+
         if(o2.getName() != null){
             if(!o1.getName().equals(o2.getName())){
                 return -1;
@@ -37,6 +38,18 @@ public class ComparatorArticles implements Comparator<ArticleDTO> {
                 return -1;
             }
         }
+        if(o2.getPrice() != null){
+            if(!o1.getPrice().equals(o2.getPrice())){
+                return -1;
+            }
+        }
+
+        if(o2.getQuantity() != null){
+            if(o1.getQuantity().equals(o2.getQuantity())){
+                return -1;
+            }
+        }
+
         return 1;
     }
 }
