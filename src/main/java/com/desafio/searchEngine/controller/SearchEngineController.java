@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping(path="/api/v1/articles")
+@RequestMapping(path = "/api/v1/articles")
 public class SearchEngineController {
 
     private final SearchEngineServiceImpl searchEngineSrv;
@@ -19,56 +19,25 @@ public class SearchEngineController {
     }
 
     @GetMapping()
-    public List<ArticleDTO> getAllArticlesAvailables(){
-      return this.searchEngineSrv.getAllArticlesAvailables();
+    public List<ArticleDTO> getAllArticlesAvailables() {
+        return this.searchEngineSrv.getAllArticlesAvailables();
     }
 
-    @RequestMapping(method = RequestMethod.GET, params={"category"})
-    public List<ArticleDTO> getAllArticlesByCategory(@RequestParam String category){
+    @RequestMapping(params = "category")
+    public List<ArticleDTO> getAllArticlesByCategory(@RequestParam String category) {
         return this.searchEngineSrv.getAllArticlesByCategory(category);
     }
 
-    @RequestMapping(method = RequestMethod.GET, params = {"name", "category", "freeShip", "brand", "price", "quantity", "prestige", "price"})
-    public List<ArticleDTO> getAllArticlesByFilters(@RequestParam String name,
-                                                    @RequestParam String category,
-                                                    @RequestParam String brand,
-                                                    @RequestParam Double price,
-                                                    @RequestParam Integer quantity,
-                                                    @RequestParam Boolean freeShip,
-                                                    @RequestParam String prestige) {
+    @GetMapping()
+    public List<ArticleDTO> getAllArticlesByFilters(@RequestParam (required = false) String name,
+                                                    @RequestParam (required = false) String category,
+                                                    @RequestParam (required = false) String brand,
+                                                    @RequestParam (required = false) Double price,
+                                                    @RequestParam (required = false) Integer quantity,
+                                                    @RequestParam (required = false) Boolean freeShip,
+                                                    @RequestParam (required = false) String prestige) {
         ArticleDTO articleDTO = new ArticleDTO(name, category, brand, price, quantity, freeShip, prestige);
         return searchEngineSrv.getAllArticlesByFilters(articleDTO);
     }
 
-    @RequestMapping(method = RequestMethod.GET, params = {"category", "freeShip"})
-    public List<ArticleDTO> getAllArticlesByFilters(@RequestParam String category,
-                                                    @RequestParam Boolean freeShip) {
-        ArticleDTO articleDTO = new ArticleDTO(category, freeShip);
-        return searchEngineSrv.getAllArticlesByFilters(articleDTO);
-    }
-    @RequestMapping(method = RequestMethod.GET, params = {"category", "brand"})
-    public List<ArticleDTO> getAllArticlesByFilters(@RequestParam String category,
-                                                    @RequestParam String brand) {
-        ArticleDTO articleDTO = new ArticleDTO(category);
-        articleDTO.setBrand(brand);
-        return searchEngineSrv.getAllArticlesByFilters(articleDTO);
-    }
-
-
-
-
-
 }
-
-/*
-
-
-    @RequestParam String name,
-    @RequestParam String category,
-    @RequestParam String brand,
-    @RequestParam Double price,
-    @RequestParam Integer quantity,
-    @RequestParam Boolean freeShip,
-    @RequestParam String prestige,
-
- */
