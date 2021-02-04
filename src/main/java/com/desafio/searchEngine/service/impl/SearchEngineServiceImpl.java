@@ -95,6 +95,8 @@ public class SearchEngineServiceImpl implements SearchEngineService {
         if(order.equals(OrderArticles.PRICE_LOWER)){
             return Sorter.bubbleSortAsc(articles, Comparator.comparing(ArticleDTO::getPrice));
         }
+        //si el metodo de ordenamiento no existe, devuelve la lista original
+        return articles;
     }
 
 }
