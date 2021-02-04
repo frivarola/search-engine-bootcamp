@@ -24,7 +24,7 @@ public class ComparatorArticles implements Comparator<ArticleDTO> {
             }
         }
         if(o2.getCategory() != null){
-            if(!o1.getFreeShip().equals(o2.getFreeShip())){
+            if(!o1.getCategory().equals(o2.getCategory())){
                 return -1;
             }
         }
