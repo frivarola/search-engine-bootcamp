@@ -1,5 +1,6 @@
 [
   {
+    "id": 101,
     "name": "Short",
     "category": "Indumentaria",
     "brand": "Lacoste",
@@ -9,6 +10,8 @@
     "prestige": "***"
   },
   {
+
+    "id": 102,
     "name": "Medias",
     "category": "Indumentaria",
     "brand": "Mistral",
@@ -18,6 +21,8 @@
     "prestige": "*"
   },
   {
+
+    "id": 103,
     "name": "Chomba",
     "category": "Indumentaria",
     "brand": "Taverniti",
@@ -27,6 +32,8 @@
     "prestige": "***"
   },
   {
+
+    "id": 104,
     "name": "Remera",
     "category": "Indumentaria",
     "brand": "Taverniti",
@@ -36,6 +43,8 @@
     "prestige": "***"
   },
   {
+
+    "id": 105,
     "name": "Smartwatch",
     "category": "Celulares",
     "brand": "Noga",
@@ -45,6 +54,8 @@
     "prestige": "**"
   },
   {
+
+    "id": 106,
     "name": "Redmi Note 9",
     "category": "Celulares",
     "brand": "Xiamoi",
@@ -54,6 +65,8 @@
     "prestige": "****"
   },
   {
+
+    "id": 107,
     "name": "Camiseta",
     "category": "Deportes",
     "brand": "Topper",
@@ -63,6 +76,8 @@
     "prestige": "***"
   },
   {
+
+    "id": 108,
     "name": "Zapatillas Deportivas",
     "category": "Deportes",
     "brand": "Adidas",
@@ -72,6 +87,8 @@
     "prestige": "*****"
   },
   {
+
+    "id": 109,
     "name": "Zapatillas Deportivas",
     "category": "Deportes",
     "brand": "Nike",
@@ -81,6 +98,7 @@
     "prestige": "*****"
   },
   {
+    "id": 110,
     "name": "Soldadora",
     "category": "Herramientas",
     "brand": "Black & Decker",
@@ -90,6 +108,7 @@
     "prestige": "***"
   },
   {
+    "id": 111,
     "name": "Taladro",
     "category": "Herramientas",
     "brand": "Black & Decker",
@@ -99,6 +118,7 @@
     "prestige": "****"
   },
   {
+    "id": 112,
     "name": "Desmalezadora",
     "category": "Herramientas",
     "brand": "Makita",

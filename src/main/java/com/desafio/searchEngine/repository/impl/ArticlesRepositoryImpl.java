@@ -57,7 +57,7 @@ public class ArticlesRepositoryImpl implements ArticlesRepository {
         File fileDb = null;
 
         try{
-            fileDb = ResourceUtils.getFile("/Users/frivarola/Documents/ProjectsDH/spring/search-engine/src/main/java/com/desafio/searchEngine/repository/articles.json");
+            fileDb = ResourceUtils.getFile("src/main/java/com/desafio/searchEngine/repository/articles.json");
             ObjectMapper mapper = new ObjectMapper();
             TypeReference<ArrayList<ArticleDTO>> tf = new TypeReference<>(){};
             articles = mapper.readValue(fileDb, tf);
