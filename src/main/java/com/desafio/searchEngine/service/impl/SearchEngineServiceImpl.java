@@ -7,8 +7,10 @@ import com.desafio.searchEngine.utils.ComparatorArticles;
 import com.desafio.searchEngine.utils.OrderArticles;
 import com.desafio.searchEngine.utils.Sorter;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -54,6 +56,10 @@ public class SearchEngineServiceImpl implements SearchEngineService {
             if (comparator.compare(art, articleDTO) > 0) {
                 result.add(art);
             }
+        }
+
+        if(result.isEmpty()){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No se encontraron resultados para la busqueda.");
         }
 
         return result;

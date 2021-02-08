@@ -31,17 +31,18 @@ public class SearchEngineController {
  */
 
     @GetMapping()
-    public List<ArticleDTO> getAllArticlesByFilters(@RequestParam (required = false) String name,
-                                                    @RequestParam (required = false) String category,
-                                                    @RequestParam (required = false) String brand,
-                                                    @RequestParam (required = false) Double price,
-                                                    @RequestParam (required = false) Integer quantity,
-                                                    @RequestParam (required = false) Boolean freeShip,
-                                                    @RequestParam (required = false) String prestige,
-                                                    @RequestParam (required = false) Integer order) {
+    public List<ArticleDTO> getAllArticlesByFilters(@RequestParam(required = false) Integer id,
+                                                    @RequestParam(required = false) String name,
+                                                    @RequestParam(required = false) String category,
+                                                    @RequestParam(required = false) String brand,
+                                                    @RequestParam(required = false) Double price,
+                                                    @RequestParam(required = false) Integer quantity,
+                                                    @RequestParam(required = false) Boolean freeShip,
+                                                    @RequestParam(required = false) String prestige,
+                                                    @RequestParam(required = false) Integer order) {
         //En este momento se arma un "PSEUDO ARTICULO" con los valores que nos llegaron como parametros y se trata de buscar el Articulo que sea mas similar a este pseudoArticulo
         //La comparacion se hace con ComparatorArticle
-        ArticleDTO articleDTO = new ArticleDTO(name, category, brand, price, quantity, freeShip, prestige);
+        ArticleDTO articleDTO = new ArticleDTO(id, name, category, brand, price, quantity, freeShip, prestige);
         return searchEngineSrv.getAllArticlesByFilters(articleDTO, order);
     }
 
