@@ -13,6 +13,11 @@ public class ComparatorArticles implements Comparator<ArticleDTO> {
      */
     public int compare(ArticleDTO o1, ArticleDTO o2) {
 
+        if(o2.getId() != null){
+            if(!o1.getId().equals(o2.getId())){
+                return -1;
+            }
+        }
         if(o2.getName() != null){
             if(!o1.getName().equals(o2.getName())){
                 return -1;
