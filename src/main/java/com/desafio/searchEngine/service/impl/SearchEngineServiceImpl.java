@@ -5,7 +5,6 @@ import com.desafio.searchEngine.repository.impl.ArticlesRepositoryImpl;
 import com.desafio.searchEngine.service.SearchEngineService;
 import com.desafio.searchEngine.utils.ComparatorArticles;
 import com.desafio.searchEngine.utils.OrderArticles;
-import com.desafio.searchEngine.utils.Sorter;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.lang.Nullable;
@@ -14,7 +13,6 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 
@@ -95,12 +93,13 @@ public class SearchEngineServiceImpl implements SearchEngineService {
         List<ArticleDTO> articles = list;
         if (order.equals(OrderArticles.ALPH_ASC.ordinal())) {
             //orden alfabeticamente ascendente
-            Collections.sort(articles, (a,b) -> a.getName().compareTo(b.getName()));
+            Collections.sort(articles, (a,b) -> b.getName().compareTo(a.getName()));
+
             return articles;
         }
         if (order.equals(OrderArticles.ALPH_DESC.ordinal())) {
             //orden alfabeticamente descendente
-            Collections.sort(articles, (a,b) -> b.getName().compareTo(a.getName()));
+            Collections.sort(articles, (a,b) -> a.getName().compareTo(b.getName()));
             return articles;
         }
         if (order.equals(OrderArticles.PRICE_HIGHER.ordinal())) {

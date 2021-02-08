@@ -73,4 +73,39 @@ class SearchEngineApplicationTests {
 				.andExpect(status().isOk());
 	}
 
+	@Test
+	void testService7() throws Exception{
+		this.mockMvc.perform(get("/api/v1/articles?freeShip=true&brand=BetaMark"))
+				.andDo(print())
+				.andExpect(status().isNotFound());
+	}
+
+	@Test
+	void alphDesc() throws Exception{
+		this.mockMvc.perform(get("/api/v1/articles?order=0"))
+				.andDo(print())
+				.andExpect(status().isOk());
+	}
+
+	@Test
+	void alphAsc() throws Exception{
+		this.mockMvc.perform(get("/api/v1/articles?order=1"))
+				.andDo(print())
+				.andExpect(status().isOk());
+	}
+
+	@Test
+	void priceDesc() throws Exception{
+		this.mockMvc.perform(get("/api/v1/articles?order=2"))
+				.andDo(print())
+				.andExpect(status().isOk());
+	}
+
+	@Test
+	void priceAsc() throws Exception{
+		this.mockMvc.perform(get("/api/v1/articles?order=3"))
+				.andDo(print())
+				.andExpect(status().isOk());
+	}
+
 }
